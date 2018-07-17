@@ -11,7 +11,7 @@ export const translations = {
         what: {
           title: 'What do we provide?',
           text:
-            'Whether you are a start up, an enterprise, or somewhere in between, we will work with you every step of the way. Choose your path below to learm more about our custom services.',
+            'From Startups to Enterprise companies, our specialized team will work with you every step of the way to meet your business goals and add to your success. Welcome to the OpenForge family - scroll down to learn more!',
           startup: 'Start Up',
           smallTeam: 'Small Team',
           midSizeTeam: 'Mid-Size Team',
@@ -58,10 +58,40 @@ export const translations = {
             mobileWebApplicationServices: 'Mobile & Web Application Services',
           },
         },
+
+        header: {
+          title: 'What do we provide?',
+          text:
+            'From Startups to Enterprise companies, our specialized team will work with you every step of the way to meet your business goals and add to your success. Welcome to the OpenForge family - scroll down to learn more!',
+        },
+
+        cards: {
+          develop: {
+            title: 'App Development',
+            text: {
+              start:
+                'OpenForge is a world-wide brand in Mobile and Web Application software development. Our team of experienced software engineers specialize in a variety of frameworks and technologies such as',
+              end: ', and many more!',
+            },
+          },
+          design: {
+            title: 'UI/UX Design',
+            text: {
+              start:
+                'The OpenForge Discovery &amp; Design Process is specifically engineered to increase ROI, user engagement, and get you results. Our unique process has been proven to keep projects on-time and on-budget every step of the way by utilizing leading technologies such as',
+              end: '.',
+            },
+          },
+          consult: {
+            title: 'Consulting',
+            text:
+              "We offer a wide variety of services including Training, CTO Representation, Design Audits, and Software Process Improvement (SPI) Consulting. If you are looking to increase your team's efficiency or bring your product to market on-time and on-schedule, our team is here to help you succeed.",
+          },
+        },
       },
       learnAbout: {
-        header: 'Want to learn more about us?',
-        link: 'Get to know us',
+        header: 'Want to learn more?',
+        link: 'GET IN TOUCH',
       },
       process: {
         title: 'Our Process',
@@ -110,6 +140,10 @@ export const translations = {
           frontEndDeveloper: 'Front End Developer',
           projectManager: 'Project Manager / QA Engineer',
         },
+
+        work: {
+          title: 'Check Out Our Work',
+        },
       },
     },
     contact: {
@@ -130,8 +164,9 @@ export const translations = {
           send: 'Send',
         },
         alert: {
+          title: 'Thank you!',
           text:
-            "Thank you for reaching out! we'll get back to you within 24 hours!",
+            'Your message has been delivered. Someone will be in touch with you soon!',
         },
         fullName: 'Full Name',
         company: 'Company',
@@ -145,6 +180,7 @@ export const translations = {
         graphicDesign: 'Graphic Design',
         consulting: 'Consulting',
         ctoAsService: 'CTO as a Service',
+        unsure: 'Unsure',
         budgetThreshold: {
           unsure: 'Unsure',
           one: '5K-10K',
@@ -261,7 +297,14 @@ export const translations = {
         content: 'Coming soon!',
       },
 
-      copyright: '&copy; OpenForge. All rights reserved.',
+      copyright: '&copy; OpenForge 2018',
+
+      webinar: {
+        title: 'Sign Up for Our Webinar Series',
+        text:
+          'Our FREE webinar series will cover topics including UI/UX design, app development, and SEO strategy.',
+        register: 'Register Today',
+      },
     },
 
     nav: {

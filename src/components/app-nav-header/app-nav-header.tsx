@@ -55,6 +55,7 @@ export class AppNavHeader {
           <button
             class="navbar-toggler"
             type="button"
+            data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
@@ -77,13 +78,22 @@ export class AppNavHeader {
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
-                  url="#about"
+                  url="/about"
                   anchorClass="nav-link"
                   activeClass="active"
                 >
                   {translate('nav.links.about')}
                 </stencil-route-link>
               </li>
+              {/* <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link
+                  url="/services"
+                  anchorClass="nav-link"
+                  activeClass="active"
+                >
+                  Services
+                </stencil-route-link>
+              </li> */}
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/contact"

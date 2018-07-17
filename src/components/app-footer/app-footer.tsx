@@ -16,7 +16,7 @@ export class AppFooter {
     const { translate } = this.ts;
 
     return (
-      <footer>
+      <footer class="footer">
         <div class="container">
           <div class="row">
             <div class="content col-sm-12 col-md-4">
@@ -33,74 +33,55 @@ export class AppFooter {
               </a>
               {/* <a href="https://www.openforge.io" target="_blank" rel="noopener">
                 Work at OpenForge
-              </a>
-              <a href="/career">Career Opportunities</a> */}
+              </a> */}
             </div>
-            <div class="content col-sm-12 col-md-4">
-              <h2>{translate('footer.partners.header')}</h2>
-              <a
-                href="https://ionicframework.com/"
-                title={translate('footer.partners.ionic.title')}
-                target="_blank"
-                rel="noopener"
-              >
-                <app-img
-                  class="img-fluid"
-                  src="assets/logo-ionic.png"
-                  alt="Ionic"
-                />
-              </a>
-              <a
-                href="http://www.215marketing.com/"
-                title={translate('footer.partners.marketing215.title')}
-                target="_blank"
-                rel="noopener"
-              >
-                <app-img
-                  class="img-fluid"
-                  src="assets/logo-215marketing.png"
-                  alt={translate('footer.partners.marketing215.alt')}
-                />
-              </a>
-              <a
-                href="https://www.goemerchant.com/"
-                title={translate('footer.partners.goEmerchant.title')}
-                target="_blank"
-                rel="noopener"
-              >
-                <app-img
-                  class="img-fluid"
-                  src="assets/logo-goemerchant.png"
-                  alt={translate('footer.partners.goEmerchant.alt')}
-                />
-              </a>
+            <div class="footer--column col-12 col-sm-4">
+              <h2>Follow Us</h2>
+              <ul class="footer--social-links">
+                <li>
+                  <a href="https://twitter.com/OpenForge_US" target="_blank">
+                    <i class="fab fa-twitter-square" aria-hidden="true" />{' '}
+                    @OpenForge_US
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/OpenForgeUS/"
+                    target="_blank"
+                  >
+                    <i class="fab fa-facebook-square" aria-hidden="true" />{' '}
+                    OpenForge_US
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/openforge/"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin" aria-hidden="true" />{' '}
+                    OpenForge_US
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div class="content col-sm-12 col-md-4">
-              <h2>{translate('footer.blog.header')}</h2>
-              <p>{translate('footer.blog.content')}</p>
-              {/* <p>
-                Enter your email address to subscribe to our blog and receive
-                notifications of new posts by email.
+            <div class="footer--column col-12 col-sm-4">
+              <h2>
+                <app-translate key="footer.webinar.title" />
+              </h2>
+              <p>
+                <app-translate key="footer.webinar.text" />
               </p>
-              <p>Join 2,816 other subscribers</p>
-              <form>
-                <div class="form-group">
-                  <label class="sr-only">Email address</label>
-                  <input
-                    id="email"
-                    class="form-control"
-                    type="email"
-                    placeholder="Email address.."
-                  />
-                </div>
-                <button class="btn btn-primary" type="submit">
-                  Subscribe
-                </button>
-              </form> */}
+              <a
+                href="http://learn.openforge.io/"
+                target="_blank"
+                class="footer--btn btn btn-primary"
+              >
+                <app-translate key="footer.webinar.register" />
+              </a>
             </div>
           </div>
 
-          <p class="text-center">
+          <p class="copyright">
             <app-translate key="footer.copyright" />
           </p>
         </div>

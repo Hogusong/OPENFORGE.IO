@@ -136,30 +136,11 @@ export class AppHome {
       },
     ];
   }
-
-  componentDidLoad() {
-    let hrefArray;
-    try {
-      hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-      hrefArray.forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const element = document.querySelector(this.getAttribute('href'));
-          element &&
-            element.scrollIntoView({
-              block: 'start',
-              behavior: 'smooth',
-            });
-        });
-      });
-    } catch (e) {
-      console.error('caught error componentDidLoad app-home', e);
-    }
-  }
+  componentDidLoad() {}
 
   render() {
     return (
-      <div>
+      <div class="home">
         {/* header - hero */}
         <app-hero-home>
           <span slot="header">
@@ -174,281 +155,178 @@ export class AppHome {
         </app-hero-home>
 
         {/* section - services */}
-        <section id="services">
-          <div class="container services">
-            <h2>
-              <app-translate key="home.services.what.title" />
-            </h2>
-            <p>
-              <app-translate key="home.services.what.text" />
-              {/* Technology is constantly changing; Let us help you change with it. */}
-            </p>
-            <nav class="nav" role="navigation">
-              <div class="nav nav-tabs nav-fill" id="nav-tab">
-                <a
-                  class="nav-item nav-link active"
-                  id="nav-startup-tab"
-                  data-toggle="tab"
-                  href="#nav-startup"
-                  role="tab"
-                  aria-controls="nav-startup"
-                  aria-selected="true"
-                >
+        <section id="services" class="bg-gray">
+          <div class="services">
+            <div class="services--header">
+              <h2>
+                <app-translate key="home.services.header.title" />
+              </h2>
+              <p>
+                <app-translate key="home.services.header.text" />
+              </p>
+            </div>
+            <div class="card-container">
+              <div class="card">
+                <div class="card--image">
                   <img
-                    class="img-fluid"
-                    src="assets/graphic-services-startup.png"
-                    alt=""
+                    class="card--image"
+                    src="assets/graphic-home-development-card.png"
+                    alt="app-development-image"
                   />
-                  <div>
-                    <app-translate key="home.services.what.startup" />{' '}
-                    <i class="fa fa-plus" aria-hidden="true" />
-                  </div>
-                </a>
-                <a
-                  class="nav-item nav-link"
-                  id="nav-smallteam-tab"
-                  data-toggle="tab"
-                  href="#nav-smallteam"
-                  role="tab"
-                  aria-controls="nav-smallteam"
-                  aria-selected="false"
-                >
-                  <img
-                    class="img-fluid"
-                    src="assets/graphic-services-small.png"
-                    alt=""
-                  />
-                  <div>
-                    <app-translate key="home.services.what.smallTeam" />{' '}
-                    <i class="fa fa-plus" aria-hidden="true" />
-                  </div>
-                </a>
-                <a
-                  class="nav-item nav-link"
-                  id="nav-midteam-tab"
-                  data-toggle="tab"
-                  href="#nav-midteam"
-                  role="tab"
-                  aria-controls="nav-midteam"
-                  aria-selected="false"
-                >
-                  <img
-                    class="img-fluid"
-                    src="assets/graphic-services-midsize.png"
-                    alt=""
-                  />
-                  <div>
-                    <app-translate key="home.services.what.midSizeTeam" />{' '}
-                    <i class="fa fa-plus" aria-hidden="true" />
-                  </div>
-                </a>
-                <a
-                  class="nav-item nav-link"
-                  id="nav-enterprise-tab"
-                  data-toggle="tab"
-                  href="#nav-enterprise"
-                  role="tab"
-                  aria-controls="nav-enterprise"
-                  aria-selected="false"
-                >
-                  <img
-                    class="img-fluid"
-                    src="assets/graphic-services-enterprise.png"
-                    alt=""
-                  />
-                  <div>
-                    <app-translate key="home.services.what.enterprise" />{' '}
-                    <i class="fa fa-plus" aria-hidden="true" />
-                  </div>
-                </a>
-              </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
-              <div
-                class="tab-pane fade show active"
-                id="nav-startup"
-                role="tabpanel"
-                aria-labelledby="nav-startup-tab"
-              >
-                <div class="services-content">
-                  <div class="row justify-content-center">
-                    <div class="col-md-6">
-                      <h3>
-                        <app-translate key="home.services.what.whatYouNeed" />
-                      </h3>
-                      <app-translate key="home.services.what.whatYouNeedText" />
-                    </div>
-
-                    <div class="col-md-4">
-                      <h3>
-                        <app-translate key="home.services.what.whatWeProvide.title" />
-                      </h3>
-                      <ul>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.startUpConsulting" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.enhancedDesigns" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.uiRecommendations" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.mobileDevelopment" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.webDevelopment" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.engagementStrategy" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.guearillaMarketingStrategy" />
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                </div>
+                <div class="card--text">
+                  <h3>
+                    <app-translate key="home.services.cards.develop.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="home.services.cards.develop.text.start" />
+                    <a href="https://ionicframework.com/" target="_blank">
+                      {' '}
+                      The Ionic Framework{' '}
+                    </a>,
+                    <a href="https://angular.io/" target="_blank">
+                      {' '}
+                      Angular (Google)
+                    </a>,
+                    <a href="https://reactjs.org/" target="_blank">
+                      {' '}
+                      React.js (Facebook)
+                    </a>,
+                    <a href="https://nodejs.org/en/" target="_blank">
+                      {' '}
+                      Node.js
+                    </a>,
+                    <a href="https://www.mongodb.com/" target="_blank">
+                      {' '}
+                      MongoDB
+                    </a>
+                    <app-translate key="home.services.cards.develop.text.end" />
+                  </p>
                 </div>
               </div>
-              <div
-                class="tab-pane fade"
-                id="nav-smallteam"
-                role="tabpanel"
-                aria-labelledby="nav-smallteam-tab"
-              >
-                <div class="services-content">
-                  <div class="row justify-content-center">
-                    <div class="col-md-6">
-                      <h3>
-                        <app-translate key="home.services.what.whatYouNeed" />
-                      </h3>
-                      <app-translate key="home.services.what.whatYouNeedTextSmallTeam" />
-                    </div>
-
-                    <div class="col-md-4">
-                      <h3>
-                        <app-translate key="home.services.what.whatWeProvide.title" />
-                      </h3>
-                      <ul>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.businessConsulting" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.technicalConsulting" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.businessElligibilityAudit" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.mobileWebDesigns" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.uIUXAudits" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.mobileWebApplicationDevelopment" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.customerEngagementStrategy" />
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+              <div class="card">
+                <div class="card--image">
+                  <app-img
+                    class="card--image"
+                    src="assets/graphic-home-design-card.png"
+                    alt="ui-ux-design-image"
+                  />
+                </div>
+                <div class="card--text">
+                  <h3>
+                    <app-translate key="home.services.cards.design.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="home.services.cards.design.text.start" />
+                    <a
+                      href="https://www.adobe.com/products/photoshop.html"
+                      target="_blank"
+                    >
+                      {' '}
+                      Adobe Photoshop
+                    </a>,
+                    <a href="https://www.sketchapp.com/" target="_blank">
+                      {' '}
+                      Sketch App
+                    </a>, and
+                    <a href="https://www.goabstract.com/" target="_blank">
+                      {' '}
+                      Abstract
+                    </a>
+                    <app-translate key="home.services.cards.design.text.end" />
+                  </p>
                 </div>
               </div>
-              <div
-                class="tab-pane fade"
-                id="nav-midteam"
-                role="tabpanel"
-                aria-labelledby="nav-midteam-tab"
-              >
-                <div class="services-content">
-                  <div class="row justify-content-center">
-                    <div class="col-md-6">
-                      <h3>
-                        <app-translate key="home.services.what.whatYouNeed" />
-                      </h3>
-                      <app-translate key="home.services.what.whatYouNeedTextMidTeam" />
-                    </div>
-
-                    <div class="col-md-4">
-                      <h3>
-                        <app-translate key="home.services.what.whatWeProvide.title" />
-                      </h3>
-                      <ul>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.businessStrategyConsulting" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.professionalMobileWebDesigns" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.uIUXAuditsRecommendations" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.mobileDevelopment" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.webDevelopment" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.strategicCustomerEngagementConsulting" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.teamTrainingsWorkshops" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.processImprovementTraining" />
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+              <div class="card">
+                <div class="card--image">
+                  <app-img
+                    class="card--image"
+                    src="assets/graphic-home-consulting-card.png"
+                    alt="consulting-image"
+                  />
+                </div>
+                <div class="card--text">
+                  <h3>
+                    <app-translate key="home.services.cards.consult.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="home.services.cards.consult.text" />
+                  </p>
                 </div>
               </div>
-              <div
-                class="tab-pane fade"
-                id="nav-enterprise"
-                role="tabpanel"
-                aria-labelledby="nav-enterprise-tab"
-              >
-                <div class="services-content">
-                  <div class="row justify-content-center">
-                    <div class="col-md-6">
-                      <h3>
-                        <app-translate key="home.services.what.whatYouNeed" />
-                      </h3>
-                      <app-translate key="home.services.what.whatYouNeedTextEnterpriseTeam" />
-                    </div>
+            </div>
+          </div>
+        </section>
 
-                    <div class="col-md-4">
-                      <h3>
-                        <app-translate key="home.services.what.whatWeProvide.title" />
-                      </h3>
-                      <ul>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.enterpriseDesignWorkshops" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.crossDisciplinaryTeamTraining" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.externalConsultingProcessImprovement" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.userExperienceUIUXAudits" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.webAccessabilityAudits" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.mobileWebApplicationServices" />
-                        </li>
-                        <li>
-                          <app-translate key="home.services.what.whatWeProvide.customerEngagementStrategy" />
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+        {/* section - our work */}
+        <section id="our-work" class="bg-white">
+          <div class="container our-work">
+            <div class="our-work--header">
+              <h2>
+                <app-translate key="home.services.work.title" />
+              </h2>
+            </div>
+            <div class="content">
+              <div class="work">
+                <h3>LoudCloud</h3>
+                <app-img
+                  class=""
+                  src="assets/graphic-home-loudcloud.png"
+                  alt="loudcloud-app-image"
+                />
+                <div class="icons">
+                  <app-img
+                    class=""
+                    src="assets/graphic-apple-appstore.png"
+                    alt="apple-app-store-icon"
+                  />
+                  <app-img
+                    class=""
+                    src="assets/graphic-google-googleplaystore.png"
+                    alt="google-play-store-icon"
+                  />
+                </div>
+              </div>
+
+              <div class="work">
+                <h3>The Voyage</h3>
+                <app-img
+                  class=""
+                  src="assets/graphic-home-voyage.png"
+                  alt="voyage-app-image"
+                />
+                <div class="icons">
+                  <app-img
+                    class=""
+                    src="assets/graphic-apple-appstore.png"
+                    alt="apple-app-store-icon"
+                  />
+                  <app-img
+                    class=""
+                    src="assets/graphic-google-googleplaystore.png"
+                    alt="google-play-store-icon"
+                  />
+                </div>
+              </div>
+
+              <div class="work">
+                <h3>DigiThermo</h3>
+                <app-img
+                  class=""
+                  src="assets/graphic-home-digithermo.png"
+                  alt="digithermo-app-image"
+                />
+                <div class="icons">
+                  <app-img
+                    class=""
+                    src="assets/graphic-apple-appstore.png"
+                    alt="apple-app-store-icon"
+                  />
+                  <app-img
+                    class=""
+                    src="assets/graphic-google-googleplaystore.png"
+                    alt="google-play-store-icon"
+                  />
                 </div>
               </div>
             </div>
@@ -456,16 +334,14 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <section id="learn-about">
-          <app-cta link-url="#about">
-            <span slot="header">
-              <app-translate key="home.learnAbout.header" />
-            </span>
-            <span slot="link">
-              <app-translate key="home.learnAbout.link" />
-            </span>
-          </app-cta>
-        </section>
+        <app-cta link-url="/contact" id="cta-contact">
+          <span slot="header">
+            <app-translate key="home.learnAbout.header" />
+          </span>
+          <span slot="link">
+            <app-translate key="home.learnAbout.link" />
+          </span>
+        </app-cta>
 
         {/* section - process */}
         <section id="process" class="bg-gray">
@@ -483,7 +359,10 @@ export class AppHome {
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg img-url="assets/graphic-home-consulting.png">
+            <content-graphic-lg
+              img-url="assets/graphic-home-consulting.png"
+              reverse={true}
+            >
               <h3 slot="header">
                 <app-translate key="home.process.designUserExperience" />
               </h3>
@@ -501,7 +380,10 @@ export class AppHome {
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg img-url="assets/graphic-home-deployment.png">
+            <content-graphic-lg
+              img-url="assets/graphic-home-deployment.png"
+              reverse={true}
+            >
               <h3 slot="header">
                 <app-translate key="home.process.deployment" />
               </h3>
@@ -521,33 +403,6 @@ export class AppHome {
           </div>
         </section>
 
-        {/* section - persepectives */}
-        <section class="bg-black" id="perspectives">
-          <div class="container perspectives">
-            <img class="img-fluid" src="assets/graphic-home-icons.png" alt="" />
-            <h2>
-              <app-translate key="home.perspectives.title" />
-            </h2>
-            <p>
-              <app-translate key="home.perspectives.text" />
-            </p>
-          </div>
-        </section>
-
-        {/* section - about */}
-        <section id="about" class="bg-gray">
-          <div class="container about">
-            <h2>
-              <app-translate key="home.about.title" />
-            </h2>
-            <p>
-              <app-translate key="home.about.text" />
-            </p>
-
-            <app-members members={this.members} />
-          </div>
-        </section>
-
         {/* section - partners */}
         <section>
           <div class="container partners">
@@ -558,43 +413,51 @@ export class AppHome {
               <app-translate key="home.partners.text" />
             </p>
 
-            <div class="partners--logos">
-              <img
+            <div class="partners--trusted">
+              <app-img
                 class="img-fluid"
-                src="assets/logo-ionic-black.png"
-                alt="Ionic"
+                src="assets/logo-ionic-trusted-black.png"
+                alt="Ionic Trusted Partner"
               />
-              <img
+            </div>
+
+            <div class="partners--logos">
+              <app-img
                 class="img-fluid"
                 src="assets/logo-angular-black.png"
                 alt="Angular"
               />
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-capacitor-black.png"
                 alt="Capacitor"
               />
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-stencil-black.png"
                 alt="Stencil"
               />
-              <img
+              <app-img
+                class="img-fluid"
+                src="assets/logo-eli-lu-entertainment-black.png"
+                alt="Eli and Lu Entertainment"
+              />
+              <app-img
                 class="img-fluid"
                 src="assets/logo-mysql-black.png"
                 alt="Mysql"
               />
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-mongodb-black.png"
                 alt="MongoDB"
               />
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-nodejs-black.png"
                 alt="Node JS"
               />
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-aws-black.png"
                 alt="AWS"
